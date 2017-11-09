@@ -1,4 +1,7 @@
+<img src="README.png" width="960" height="120" alt="README" />
+
 # SixArm.com → Ruby → Minitest <br> equal_collection assertion & expectations
+
 
 <!--HEADER-OPEN-->
 
