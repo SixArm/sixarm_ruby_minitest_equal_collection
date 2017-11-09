@@ -2,8 +2,7 @@
 
 # SixArm.com → Ruby → minitest<br> equal_collection assert & expect
 
-
-<!--HEADER-OPEN-->
+<!--header-open-->
 
 [![Gem Version](https://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection.svg)](http://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection)
 [![Build Status](https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection.png)](https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection)
@@ -14,9 +13,9 @@
 * Doc: <http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc>
 * Gem: <https://rubygems.org/gems/sixarm_ruby_minitest_equal_collection>
 * Contact: Joel Parker Henderson, <joel@sixarm.com>
-* Project: [Changes](CHANGES.md), [License](LICENSE.md), [Contributing](CONTRIBUTING.md).
+* Project: [changes](CHANGES.md), [license](LICENSE.md), [contributing](CONTRIBUTING.md)
 
-<!--HEADER-SHUT-->
+<!--header-shut-->
 
 ## Introduction
 
@@ -47,17 +46,19 @@ For docs go to <http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc>
 Want to help? We're happy to get pull requests.
 
 
-<!--INSTALL-OPEN-->
+<!--install-open-->
 
 ## Install
 
 ### Gem
 
-Run this command in your shell or terminal:
+To Run this command in your shell or terminal:
 
     gem install sixarm_ruby_minitest_equal_collection
 
-Or add this to your Gemfile:
+### Gemfile
+
+To add this gem to your Gemfile:
 
     gem 'sixarm_ruby_minitest_equal_collection'
 
@@ -67,7 +68,7 @@ To require the gem in your code:
 
     require 'sixarm_ruby_minitest_equal_collection'
 
-<!--INSTALL-SHUT-->
+<!--install-shut-->
 
 
 ## Examples
