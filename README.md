@@ -20,21 +20,25 @@
 
 ## Introduction
 
-Minitest extensions for our common cases:
+Minitest extension that compares two collections, such as two arrays, or two hashes, or two enumerable objects.
+
+  * If the two collections have equal items, independent of order, then the test passes. 
+
+  * Example: `[1, 2, 3]` and `[3, 2, 1]` passes because the comparision is independent of order.
+
+  * Example: `[1, 2, 2]` and `[1, 1, 2]` fails because the collections have different item counts.
 
 Assert:
 
-   * assert_true
-   * assert_false
-   * assert_respond_to_all
-   * assert_equal_items
+   * assert_equal_collection(a, b)
+
+   * refute_equal_collection(a, b)
 
 Spec:
 
-   * must_be_true
-   * must_be_false
-   * must_respond_to_all
-   * must_have_equal_items
+   * expect(a).must_equal_collection(b)
+
+   * expect(a).wont_equal_collection(b)
 
 Based on Minitest.
 
@@ -68,20 +72,18 @@ To require the gem in your code:
 
 ## Examples
 
-Example Minitest spec:
+Example minitest:
 
-    describe Foo do
-      it "validates" do
-        f = Foo.new
-        f.valid?.must_be_true
-      end
+    def test_order_independent
+      a = [1, 2, 3]
+      b = [3, 2, 1]
+      assert_equal_collection(a, b)
     end
 
-Example Minitest spec:
+Example minitest spec:
 
-    describe Foo do
-      it "is colorful" do
-        f = Foo.new
-        f.must_respond_to_all [:red, :green, :blue]
-      end
+    it "is order independent" do
+      a = [1, 2, 3]
+      b = [3, 2, 1]
+      expect(a).must_equal_collection(b)
     end
