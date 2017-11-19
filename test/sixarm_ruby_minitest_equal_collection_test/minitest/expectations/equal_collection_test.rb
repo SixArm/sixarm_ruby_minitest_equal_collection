@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+require "sixarm_ruby_minitest_equal_collection_test"
 
 describe "Minitest" do
 
