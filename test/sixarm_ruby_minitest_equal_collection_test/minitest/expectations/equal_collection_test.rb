@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require "sixarm_ruby_minitest_equal_collection_test"
+require "sixarm_ruby_minitest_equal_collection"
 
 describe "Minitest" do
 
@@ -125,6 +125,54 @@ describe "Minitest" do
 
           specify "with different order => pass" do
             expect({a: 1, b: 2}).must_equal_collection({b: 2, a: 1})
+          end
+
+        end
+
+      end
+
+      describe "with degenerate cases" do
+
+        describe "with `actual` nil" do
+
+          specify "raise" do
+            err = proc {
+              expect(nil).must_equal_collection []
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bactual\b.*\bnil\b/)
+          end
+
+        end
+
+        describe "with `expect` nil" do
+
+          specify "raise" do
+            err = proc {
+              expect([]).must_equal_collection nil
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bexpect\b.*\bnil\b/)
+          end
+
+        end
+
+        describe "with `actual` that does not respond to each" do
+
+          specify "raise" do
+            err = proc {
+              expect(Object.new).must_equal_collection []
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bactual\b.*\brespond to each\b/)
+          end
+
+        end
+
+        describe "with `expect` that does not respond to each" do
+
+          specify "raise" do
+            err = proc {
+              expect([]).must_equal_collection Object.new
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bexpect\b.*\brespond to each\b/)
           end
 
         end
@@ -261,6 +309,54 @@ describe "Minitest" do
             proc {
               expect({a: 1, b: 2}).wont_equal_collection({b: 2, a: 1})
             }.must_raise MiniTest::Assertion
+          end
+
+        end
+
+      end
+
+      describe "with degenerate cases" do
+
+        describe "with `actual` nil" do
+
+          specify "raise" do
+            err = proc {
+              expect(nil).wont_equal_collection []
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bactual\b.*\bnil\b/)
+          end
+
+        end
+
+        describe "with `expect` nil" do
+
+          specify "raise" do
+            err = proc {
+              expect([]).wont_equal_collection nil
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bexpect\b.*\bnil\b/)
+          end
+
+        end
+
+        describe "with `actual` that does not respond to each" do
+
+          specify "raise" do
+            err = proc {
+              expect(Object.new).wont_equal_collection []
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bactual\b.*\brespond to each\b/)
+          end
+
+        end
+
+        describe "with `expect` that does not respond to each" do
+
+          specify "raise" do
+            err = proc {
+              expect([]).wont_equal_collection Object.new
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bexpect\b.*\brespond to each\b/)
           end
 
         end

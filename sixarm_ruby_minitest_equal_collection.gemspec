@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name           = "sixarm_ruby_minitest_equal_collection"
   s.summary        = "SixArm.com → Ruby → Minitest → equal_collection assertion & extension"
   s.description    = "A Minitest assertion & expectation to compare two collections, such as enumerations or arrays, in any order, and with output that shows the difference"
-  s.version        = "1.1.0"
+  s.version        = "1.3.0"
 
   s.author         = "SixArm"
   s.email          = "sixarm@sixarm.com"

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require "sixarm_ruby_minitest_equal_collection_test"
+require "sixarm_ruby_minitest_equal_collection"
 
 describe "Minitest" do
 
@@ -139,24 +139,46 @@ describe "Minitest" do
 
       describe "with degenerate cases" do
 
-        describe "with nil" do
+        describe "with actual nil" do
 
-          specify "raise an error that explains nil" do
+          specify "raise" do
             err = proc {
-              assert_equal_collection(nil, nil)
+              assert_equal_collection([], nil)
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bnil\b/)
+            err.message.must_match(/\bactual\b.*\bnil\b/)
           end
 
         end
 
-        describe "with an object that does not respond to each" do
+        describe "with expect nil" do
 
-          specify "raise an error that explains respond to each" do
+          specify "raise" do
             err = proc {
-              assert_equal_collection(Object.new, Object.new)
+              assert_equal_collection(nil, [])
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\brespond to each\b/)
+            err.message.must_match(/\bexpect\b.*\bnil\b/)
+          end
+
+        end
+
+        describe "with actual that does not respond to each" do
+
+          specify "raise" do
+            err = proc {
+              assert_equal_collection([], Object.new)
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bactual\b.*\brespond to each\b/)
+          end
+
+        end
+
+        describe "with expect that does not respond to each" do
+
+          specify "raise" do
+            err = proc {
+              assert_equal_collection(Object.new, [])
+            }.must_raise MiniTest::Assertion
+            err.message.must_match(/\bexpect\b.*\brespond to each\b/)
           end
 
         end
