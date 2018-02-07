@@ -40,4 +40,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency('simplecov', '>= 0.14.1', '< 2')
   s.add_development_dependency('coveralls', '>= 0.8.21', '< 2')
 
+  s.required_ruby_version = ">= 2.2"
+
 end
