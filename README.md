@@ -6,14 +6,13 @@
 
 [![Gem Version](https://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection.svg)](http://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection)
 [![Build Status](https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection.png)](https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection)
-[![Code Climate Maintainability](https://api.codeclimate.com/v1/badges/aae1c7d06e7b7c81d2ae/maintainability)](https://codeclimate.com/github/SixArm/sixarm_ruby_minitest_equal_collection/maintainability)
-[![Coverage Status](https://coveralls.io/repos/SixArm/sixarm_ruby_minitest_equal_collection/badge.svg?branch=master&service=github)](https://coveralls.io/github/SixArm/sixarm_ruby_minitest_equal_collection?branch=master)
+[![Code Climate](https://api.codeclimate.com/v1/badges/aae1c7d06e7b7c81d2ae/maintainability)](https://codeclimate.com/github/SixArm/sixarm_ruby_minitest_equal_collection/maintainability)
 
-* Git: <https://github.com/sixarm/sixarm_ruby_minitest_equal_collection>
+* Git: <https://github.com/SixArm/sixarm_ruby_minitest_equal_collection>
 * Doc: <http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc>
 * Gem: <https://rubygems.org/gems/sixarm_ruby_minitest_equal_collection>
 * Contact: Joel Parker Henderson, <joel@sixarm.com>
-* Project: [changes](CHANGES.md), [license](LICENSE.md), [contributing](CONTRIBUTING.md)
+* Project: [changes](CHANGES.md), [license](LICENSE.md), [contributing](CONTRIBUTING.md).
 
 <!--header-shut-->
 
@@ -52,7 +51,7 @@ Want to help? We're happy to get pull requests.
 
 ### Gem
 
-To Run this command in your shell or terminal:
+To install this gem in your shell or terminal:
 
     gem install sixarm_ruby_minitest_equal_collection
 
