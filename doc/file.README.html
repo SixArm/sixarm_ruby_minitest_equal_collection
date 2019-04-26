@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.9.9
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -58,80 +58,66 @@
       </div>
 
       <div id="content"><div id='filecontents'>
-<h1 id="label-SixArm.com+-E2-86-92+Ruby+-E2-86-92+Minitest++equal_collection+assertion+-26+expectations">SixArm.com → Ruby → Minitest <br> equal_collection assertion &amp; expectations</h1>
-<!--HEADER-OPEN-->
-<p><a
-href="http://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection"><img
-src="https://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection.svg"></a>
-<a
-href="https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection"><img
-src="https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection.png"></a>
-<a
-href="https://codeclimate.com/github/SixArm/sixarm_ruby_minitest_equal_collection"><img
-src="https://codeclimate.com/github/SixArm/sixarm_ruby_minitest_equal_collection.png"></a>
-<a
-href="https://coveralls.io/github/SixArm/sixarm_ruby_minitest_equal_collection?branch=master"><img
-src="https://coveralls.io/repos/SixArm/sixarm_ruby_minitest_equal_collection/badge.svg?branch=master&service=github"></a></p>
+<p>&lt;img src=“README.png” width=“960” height=“120” alt=“README” /&gt;</p>
+
+<h1 id="label-SixArm.com+-E2-86-92+Ruby+-E2-86-92+minitest+equal_collection+assert+-26+expect">SixArm.com → Ruby → minitest<br> equal_collection assert &amp; expect</h1>
+<!--header-open-->
+<p><a href="http://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection"><img src="https://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection.svg"></a> <a href="https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection"><img src="https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection.png"></a> <a href="https://codeclimate.com/github/SixArm/sixarm_ruby_minitest_equal_collection/maintainability"><img src="https://api.codeclimate.com/v1/badges/aae1c7d06e7b7c81d2ae/maintainability"></a></p>
 <ul><li>
-<p>Git: <a
-href="https://github.com/sixarm/sixarm_ruby_minitest_equal_collection">github.com/sixarm/sixarm_ruby_minitest_equal_collection</a></p>
+<p>Git: <a href="https://github.com/SixArm/sixarm_ruby_minitest_equal_collection">github.com/SixArm/sixarm_ruby_minitest_equal_collection</a></p>
 </li><li>
-<p>Doc: <a
-href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">sixarm.com/sixarm_ruby_minitest_equal_collection/doc</a></p>
+<p>Doc: <a href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">sixarm.com/sixarm_ruby_minitest_equal_collection/doc</a></p>
 </li><li>
-<p>Gem: <a
-href="https://rubygems.org/gems/sixarm_ruby_minitest_equal_collection">rubygems.org/gems/sixarm_ruby_minitest_equal_collection</a></p>
+<p>Gem: <a href="https://rubygems.org/gems/sixarm_ruby_minitest_equal_collection">rubygems.org/gems/sixarm_ruby_minitest_equal_collection</a></p>
 </li><li>
-<p>Contact: Joel Parker Henderson, <a
-href="mailto:joel@sixarm.com">joel@sixarm.com</a></p>
+<p>Contact: Joel Parker Henderson, <a href="mailto:joel@sixarm.com">joel@sixarm.com</a></p>
 </li><li>
-<p>Project: <a href="CHANGES.md">Changes</a>, <a
-href="LICENSE.md">License</a>, <a href="CONTRIBUTING.md">Contributing</a>.</p>
+<p>Project: <a href="CHANGES.md">changes</a>, <a href="LICENSE.md">license</a>, <a href="CONTRIBUTING.md">contributing</a>.</p>
 </li></ul>
-<!--HEADER-SHUT-->
+<!--header-shut-->
 <h2 id="label-Introduction">Introduction</h2>
 
-<p>Minitest extensions for our common cases:</p>
+<p>Minitest extension that compares two collections, such as two arrays, or two hashes, or two enumerable objects.</p>
+<ul><li>
+<p>If the two collections have equal items, independent of order, then the test passes.</p>
+</li><li>
+<p>Example: <code>[1, 2, 3]</code> and <code>[3, 2, 1]</code> passes because the comparision is independent of order.</p>
+</li><li>
+<p>Example: <code>[1, 2, 2]</code> and <code>[1, 1, 2]</code> fails because the collections have different item counts.</p>
+</li></ul>
 
 <p>Assert:</p>
 <ul><li>
-<p>assert_true</p>
+<p>assert_equal_collection(a, b)</p>
 </li><li>
-<p>assert_false</p>
-</li><li>
-<p>assert_respond_to_all</p>
-</li><li>
-<p>assert_equal_items</p>
+<p>refute_equal_collection(a, b)</p>
 </li></ul>
 
 <p>Spec:</p>
 <ul><li>
-<p>must_be_true</p>
+<p>expect(a).must_equal_collection(b)</p>
 </li><li>
-<p>must_be_false</p>
-</li><li>
-<p>must_respond_to_all</p>
-</li><li>
-<p>must_have_equal_items</p>
+<p>expect(a).wont_equal_collection(b)</p>
 </li></ul>
 
 <p>Based on Minitest.</p>
 
-<p>For docs go to <a
-href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">sixarm.com/sixarm_ruby_minitest_equal_collection/doc</a></p>
+<p>For docs go to <a href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">sixarm.com/sixarm_ruby_minitest_equal_collection/doc</a></p>
 
 <p>Want to help? We&#39;re happy to get pull requests.</p>
-<!--INSTALL-OPEN-->
+<!--install-open-->
 <h2 id="label-Install">Install</h2>
 
 <h3 id="label-Gem">Gem</h3>
 
-<p>Run this command in your shell or terminal:</p>
+<p>To install this gem in your shell or terminal:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_sixarm_ruby_minitest_equal_collection'>sixarm_ruby_minitest_equal_collection</span>
 </code></pre>
 
-<p>Or add this to your Gemfile:</p>
+<h3 id="label-Gemfile">Gemfile</h3>
+
+<p>To add this gem to your Gemfile:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sixarm_ruby_minitest_equal_collection</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
@@ -142,34 +128,32 @@ href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">sixarm.com/si
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sixarm_ruby_minitest_equal_collection</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
-<!--INSTALL-SHUT-->
+<!--install-shut-->
 <h2 id="label-Examples">Examples</h2>
 
-<p>Example Minitest spec:</p>
+<p>Example minitest:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_describe'>describe</span> <span class='const'>Foo</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_it'>it</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>validates</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='const'>Foo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span><span class='period'>.</span><span class='id identifier rubyid_must_be_true'>must_be_true</span>
-  <span class='kw'>end</span>
+<pre class="code ruby"><code class="ruby"><span class='kw'>def</span> <span class='id identifier rubyid_test_order_independent'>test_order_independent</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>3</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_assert_equal_collection'>assert_equal_collection</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span>
 <span class='kw'>end</span>
 </code></pre>
 
-<p>Example Minitest spec:</p>
+<p>Example minitest spec:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_describe'>describe</span> <span class='const'>Foo</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_it'>it</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>is colorful</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='const'>Foo</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_must_respond_to_all'>must_respond_to_all</span> <span class='lbracket'>[</span><span class='symbol'>:red</span><span class='comma'>,</span> <span class='symbol'>:green</span><span class='comma'>,</span> <span class='symbol'>:blue</span><span class='rbracket'>]</span>
-  <span class='kw'>end</span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_it'>it</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>is order independent</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>3</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_expect'>expect</span><span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_must_equal_collection'>must_equal_collection</span><span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span>
 <span class='kw'>end</span>
 </code></pre>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Nov  8 21:47:17 2017 by
+  Generated on Thu Apr 25 22:30:33 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.2).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>
