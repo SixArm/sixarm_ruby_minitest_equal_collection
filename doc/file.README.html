@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.20
   
 </title>
 
@@ -57,79 +57,84 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<p>&lt;img src=“README.png” width=“960” height=“120” alt=“README” /&gt;</p>
+      <div id="content"><div id='filecontents'><p><img src="README.png" width="960" height="120" alt="README" /></p>
 
-<h1 id="label-SixArm.com+-E2-86-92+Ruby+-E2-86-92+minitest+equal_collection+assert+-26+expect">SixArm.com → Ruby → minitest<br> equal_collection assert &amp; expect</h1>
+<h1>SixArm.com → Ruby → minitest<br> equal_collection assert &amp; expect</h1>
+
 <!--header-open-->
-<p><a href="http://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection"><img src="https://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection.svg"></a> <a href="https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection"><img src="https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection.png"></a> <a href="https://codeclimate.com/github/SixArm/sixarm_ruby_minitest_equal_collection/maintainability"><img src="https://api.codeclimate.com/v1/badges/aae1c7d06e7b7c81d2ae/maintainability"></a></p>
-<ul><li>
-<p>Git: <a href="https://github.com/SixArm/sixarm_ruby_minitest_equal_collection">github.com/SixArm/sixarm_ruby_minitest_equal_collection</a></p>
-</li><li>
-<p>Doc: <a href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">sixarm.com/sixarm_ruby_minitest_equal_collection/doc</a></p>
-</li><li>
-<p>Gem: <a href="https://rubygems.org/gems/sixarm_ruby_minitest_equal_collection">rubygems.org/gems/sixarm_ruby_minitest_equal_collection</a></p>
-</li><li>
-<p>Contact: Joel Parker Henderson, <a href="mailto:joel@sixarm.com">joel@sixarm.com</a></p>
-</li><li>
-<p>Project: <a href="CHANGES.md">changes</a>, <a href="LICENSE.md">license</a>, <a href="CONTRIBUTING.md">contributing</a>.</p>
-</li></ul>
+
+<p><a href="http://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection"><img src="https://badge.fury.io/rb/sixarm_ruby_minitest_equal_collection.svg" alt="Gem Version"></a>
+<a href="https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection"><img src="https://travis-ci.org/SixArm/sixarm_ruby_minitest_equal_collection.png" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/SixArm/sixarm_ruby_minitest_equal_collection/maintainability"><img src="https://api.codeclimate.com/v1/badges/aae1c7d06e7b7c81d2ae/maintainability" alt="Code Climate"></a></p>
+
+<ul>
+<li>Git: <a href="https://github.com/SixArm/sixarm_ruby_minitest_equal_collection">https://github.com/SixArm/sixarm_ruby_minitest_equal_collection</a></li>
+<li>Doc: <a href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc</a></li>
+<li>Gem: <a href="https://rubygems.org/gems/sixarm_ruby_minitest_equal_collection">https://rubygems.org/gems/sixarm_ruby_minitest_equal_collection</a></li>
+<li>Contact: Joel Parker Henderson, <a href="mailto:joel@sixarm.com">joel@sixarm.com</a></li>
+<li>Project: <a href="CHANGES.md">changes</a>, <a href="LICENSE.md">license</a>, <a href="CONTRIBUTING.md">contributing</a>.</li>
+</ul>
+
 <!--header-shut-->
-<h2 id="label-Introduction">Introduction</h2>
+
+<h2>Introduction</h2>
 
 <p>Minitest extension that compares two collections, such as two arrays, or two hashes, or two enumerable objects.</p>
-<ul><li>
-<p>If the two collections have equal items, independent of order, then the test passes.</p>
-</li><li>
-<p>Example: <code>[1, 2, 3]</code> and <code>[3, 2, 1]</code> passes because the comparision is independent of order.</p>
-</li><li>
-<p>Example: <code>[1, 2, 2]</code> and <code>[1, 1, 2]</code> fails because the collections have different item counts.</p>
-</li></ul>
+
+<ul>
+<li><p>If the two collections have equal items, independent of order, then the test passes. </p></li>
+<li><p>Example: <code>[1, 2, 3]</code> and <code>[3, 2, 1]</code> passes because the comparision is independent of order.</p></li>
+<li><p>Example: <code>[1, 2, 2]</code> and <code>[1, 1, 2]</code> fails because the collections have different item counts.</p></li>
+</ul>
 
 <p>Assert:</p>
-<ul><li>
-<p>assert_equal_collection(a, b)</p>
-</li><li>
-<p>refute_equal_collection(a, b)</p>
-</li></ul>
+
+<ul>
+<li><p>assert_equal_collection(a, b)</p></li>
+<li><p>refute_equal_collection(a, b)</p></li>
+</ul>
 
 <p>Spec:</p>
-<ul><li>
-<p>expect(a).must_equal_collection(b)</p>
-</li><li>
-<p>expect(a).wont_equal_collection(b)</p>
-</li></ul>
+
+<ul>
+<li><p>expect(a).must_equal_collection(b)</p></li>
+<li><p>expect(a).wont_equal_collection(b)</p></li>
+</ul>
 
 <p>Based on Minitest.</p>
 
-<p>For docs go to <a href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">sixarm.com/sixarm_ruby_minitest_equal_collection/doc</a></p>
+<p>For docs go to <a href="http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc">http://sixarm.com/sixarm_ruby_minitest_equal_collection/doc</a></p>
 
 <p>Want to help? We&#39;re happy to get pull requests.</p>
-<!--install-open-->
-<h2 id="label-Install">Install</h2>
 
-<h3 id="label-Gem">Gem</h3>
+<!--install-open-->
+
+<h2>Install</h2>
+
+<h3>Gem</h3>
 
 <p>To install this gem in your shell or terminal:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_sixarm_ruby_minitest_equal_collection'>sixarm_ruby_minitest_equal_collection</span>
 </code></pre>
 
-<h3 id="label-Gemfile">Gemfile</h3>
+<h3>Gemfile</h3>
 
 <p>To add this gem to your Gemfile:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sixarm_ruby_minitest_equal_collection</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 
-<h3 id="label-Require">Require</h3>
+<h3>Require</h3>
 
 <p>To require the gem in your code:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sixarm_ruby_minitest_equal_collection</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
+
 <!--install-shut-->
-<h2 id="label-Examples">Examples</h2>
+
+<h2>Examples</h2>
 
 <p>Example minitest:</p>
 
@@ -151,9 +156,9 @@
 </div></div>
 
       <div id="footer">
-  Generated on Thu Apr 25 22:47:00 2019 by
+  Generated on Wed Oct  2 10:13:23 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.19 (ruby-2.6.3).
+  0.9.20 (ruby-2.6.3).
 </div>
 
     </div>

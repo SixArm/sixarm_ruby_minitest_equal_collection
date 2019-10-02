@@ -12,7 +12,7 @@ end
 
 MiniTest = Minitest unless defined?(MiniTest)
 
-require 'hashdiff'
+require 'Hashdiff'
 
 require 'sixarm_ruby_minitest_equal_collection/minitest/assertions/equal_collection'
 require 'sixarm_ruby_minitest_equal_collection/minitest/expectations/equal_collection'

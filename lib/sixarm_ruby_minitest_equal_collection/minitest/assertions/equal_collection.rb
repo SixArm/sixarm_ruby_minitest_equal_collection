@@ -45,7 +45,7 @@ module MiniTest::Assertions
   end
 
   def shared_diff(a, b)
-    HashDiff.diff countize(a), countize(b)
+    Hashdiff.diff countize(a), countize(b)
   end
 
 end

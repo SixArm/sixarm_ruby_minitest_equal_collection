@@ -16,7 +16,7 @@ describe "Minitest" do
           end
 
           specify "only one empty => fail" do
-            proc { 
+            expect { 
               expect([]).must_equal_collection [:a]
             }.must_raise MiniTest::Assertion
           end
@@ -30,7 +30,7 @@ describe "Minitest" do
           end
 
           specify "with one empty => fail" do
-            proc { 
+            expect { 
               expect({}).must_equal_collection({a: 1})
             }.must_raise MiniTest::Assertion
           end
@@ -48,7 +48,7 @@ describe "Minitest" do
           end
 
           specify "with unequal => fail" do
-            proc {
+            expect {
               expect([:a]).must_equal_collection [:b]
             }.must_raise MiniTest::Assertion
           end
@@ -62,7 +62,7 @@ describe "Minitest" do
           end
 
           specify "with unequal => fail" do
-            proc {
+            expect {
               expect({a: 1}).must_equal_collection({b: 1})
             }.must_raise MiniTest::Assertion
           end
@@ -80,7 +80,7 @@ describe "Minitest" do
           end
 
           specify "with unequal count => fail" do
-            proc { 
+            expect { 
               expect([:a]).must_equal_collection [:a, :a]
             }.must_raise MiniTest::Assertion
           end
@@ -94,7 +94,7 @@ describe "Minitest" do
           end
 
           specify "with unequal count => fail" do
-            proc { 
+            expect { 
               expect({a: 1}).must_equal_collection({a: 1, b: 1})
             }.must_raise MiniTest::Assertion
           end
@@ -136,10 +136,14 @@ describe "Minitest" do
         describe "with `actual` nil" do
 
           specify "raise" do
-            err = proc {
+            expect {
               expect(nil).must_equal_collection []
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bactual\b.*\bnil\b/)
+            begin
+              expect(nil).must_equal_collection []
+            rescue MiniTest::Assertion => err
+              expect(err.message).must_match(/\bactual\b.*\bnil\b/)
+            end
           end
 
         end
@@ -147,10 +151,14 @@ describe "Minitest" do
         describe "with `expect` nil" do
 
           specify "raise" do
-            err = proc {
+            expect {
               expect([]).must_equal_collection nil
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bexpect\b.*\bnil\b/)
+            begin
+              expect([]).must_equal_collection nil
+            rescue MiniTest::Assertion => err
+              expect(err.message).must_match(/\bexpect\b.*\bnil\b/)
+            end
           end
 
         end
@@ -158,10 +166,14 @@ describe "Minitest" do
         describe "with `actual` that does not respond to each" do
 
           specify "raise" do
-            err = proc {
+            expect {
               expect(Object.new).must_equal_collection []
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bactual\b.*\brespond to each\b/)
+            begin
+              expect(Object.new).must_equal_collection []
+            rescue MiniTest::Assertion => err
+              expect(err.message).must_match(/\bactual\b.*\brespond to each\b/)
+            end
           end
 
         end
@@ -169,10 +181,14 @@ describe "Minitest" do
         describe "with `expect` that does not respond to each" do
 
           specify "raise" do
-            err = proc {
+            expect {
               expect([]).must_equal_collection Object.new
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bexpect\b.*\brespond to each\b/)
+            begin
+              expect([]).must_equal_collection Object.new
+            rescue MiniTest::Assertion => err
+              expect(err.message).must_match(/\bexpect\b.*\brespond to each\b/)
+            end
           end
 
         end
@@ -188,7 +204,7 @@ describe "Minitest" do
         describe "with array" do
 
           specify "both empty => fail" do
-            proc {
+            expect {
               expect([]).wont_equal_collection []
             }.must_raise MiniTest::Assertion
           end
@@ -202,7 +218,7 @@ describe "Minitest" do
         describe "with hash" do
 
           specify "with both empty => fail" do
-            proc { 
+            expect { 
               expect({}).wont_equal_collection({})
             }.must_raise MiniTest::Assertion
           end
@@ -220,7 +236,7 @@ describe "Minitest" do
         describe "with array" do
 
           specify "with equal => fail" do
-            proc {
+            expect {
               expect([:a]).wont_equal_collection [:a]
             }.must_raise MiniTest::Assertion
           end
@@ -234,7 +250,7 @@ describe "Minitest" do
         describe "with hash" do
 
           specify "with equal => fail" do
-            proc {
+            expect {
               expect({a: 1}).wont_equal_collection({a: 1})
             }.must_raise MiniTest::Assertion
           end
@@ -252,7 +268,7 @@ describe "Minitest" do
         describe "with array" do
 
           specify "with equal count => fail" do
-            proc { 
+            expect { 
               expect([:a]).wont_equal_collection [:a]
             }.must_raise MiniTest::Assertion
           end
@@ -266,7 +282,7 @@ describe "Minitest" do
         describe "with hash" do
 
           specify "with equal count => fail" do
-            proc { 
+            expect { 
               expect({a: 1}).wont_equal_collection({a: 1})
             }.must_raise MiniTest::Assertion
           end
@@ -284,13 +300,13 @@ describe "Minitest" do
         describe "with array" do
 
           specify "with same items and same order => fail" do
-            proc {
+            expect {
               expect([:a, :b]).wont_equal_collection [:a, :b]
             }.must_raise MiniTest::Assertion
           end
 
           specify "with same items but different order => fail" do
-            proc {
+            expect {
               expect([:a, :b]).wont_equal_collection [:b, :a]
             }.must_raise MiniTest::Assertion
           end
@@ -300,13 +316,13 @@ describe "Minitest" do
         describe "with hash" do
 
           specify "with same items and same order => fail" do
-            proc {
+            expect {
               expect({a: 1, b: 2}).wont_equal_collection({a: 1, b: 2})
             }.must_raise MiniTest::Assertion
           end
 
           specify "with same items and different order => fail" do
-            proc {
+            expect {
               expect({a: 1, b: 2}).wont_equal_collection({b: 2, a: 1})
             }.must_raise MiniTest::Assertion
           end
@@ -320,10 +336,14 @@ describe "Minitest" do
         describe "with `actual` nil" do
 
           specify "raise" do
-            err = proc {
+            expect {
               expect(nil).wont_equal_collection []
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bactual\b.*\bnil\b/)
+            begin
+              expect(nil).wont_equal_collection []
+            rescue MiniTest::Assertion => err
+              expect(err.message).must_match(/\bactual\b.*\bnil\b/)
+            end
           end
 
         end
@@ -331,10 +351,14 @@ describe "Minitest" do
         describe "with `expect` nil" do
 
           specify "raise" do
-            err = proc {
+            expect {
               expect([]).wont_equal_collection nil
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bexpect\b.*\bnil\b/)
+            begin
+              expect([]).wont_equal_collection nil
+            rescue MiniTest::Assertion => err
+              expect(err.message).must_match(/\bexpect\b.*\bnil\b/)
+            end
           end
 
         end
@@ -342,10 +366,14 @@ describe "Minitest" do
         describe "with `actual` that does not respond to each" do
 
           specify "raise" do
-            err = proc {
+            expect {
               expect(Object.new).wont_equal_collection []
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bactual\b.*\brespond to each\b/)
+            begin
+              expect(Object.new).wont_equal_collection []
+            rescue MiniTest::Assertion => err
+              expect(err.message).must_match(/\bactual\b.*\brespond to each\b/)
+            end
           end
 
         end
@@ -353,10 +381,14 @@ describe "Minitest" do
         describe "with `expect` that does not respond to each" do
 
           specify "raise" do
-            err = proc {
+            expect {
               expect([]).wont_equal_collection Object.new
             }.must_raise MiniTest::Assertion
-            err.message.must_match(/\bexpect\b.*\brespond to each\b/)
+            begin
+              expect([]).wont_equal_collection Object.new
+            rescue MiniTest::Assertion => err
+              expect(err.message).must_match(/\bexpect\b.*\brespond to each\b/)
+            end
           end
 
         end
